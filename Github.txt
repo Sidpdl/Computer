@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C Language Codes</title>
+
+    <style>
+      body {
+        background: #fff;
+        color: #000;
+        min-height: 100vh;
+        margin: 0;
+        font-family: system-ui, sans-serif;
+      }
+
+      header {
+        background: #f0f0f0;
+        padding: 1.5rem 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding-bottom: 3rem;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      h2.questions-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin: 2rem 0 1.5rem;
+        border-bottom: 2px solid #4caf50;
+        padding-bottom: 0.3rem;
+      }
+
+      .topic-group {
+        margin-bottom: 3rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1.5rem;
+        background: #fafafa;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+      }
+
+      .topic-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #2e7d32;
+        margin-bottom: 0.25rem;
+      }
+
+      .topic-def {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+        color: #555;
+        font-style: italic;
+      }
+
+      .example-code {
+        background: #e8f5e9;
+        border-radius: 6px;
+        padding: 0.8rem 1rem;
+        font-family: 'Courier New', monospace;
+        font-size: 0.875rem;
+        color: #1b5e20;
+        margin-bottom: 1rem;
+        white-space: pre-wrap;
+      }
+
+      .topic-list {
+        list-style: disc inside;
+        margin: 0 0 1.5rem 0;
+        color: #444;
+        font-size: 0.95rem;
+      }
+
+      img.output-image {
+        max-width: 100%;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>C Language Codes</h1>
+    </header>
+
+    <main class="container">
+      <h2 class="questions-title">Questions</h2>
+
+      <!-- Pre-processor Directives -->
+      <section class="topic-group">
+        <h3 class="topic-title">Pre-processor Directives</h3>
+        <p class="topic-def">
+          Pre-processor directives give instructions to the compiler before actual compilation. They manage macros, file inclusion, and conditional compilation.
+        </p>
+        <ul class="topic-list">
+          <li>Macros</li>
+          <li>File Inclusion</li>
+          <li>Conditional Compilation</li>
+          <li>Other directives</li>
+        </ul>
+        <div class="example-code">
+#define MAX 100
+#define SQUARE(x) ((x)*(x))
+
+#include &lt;stdio.h&gt;
+
+#ifdef DEBUG
+  #define LOG(msg) printf(msg)
+#else
+  #define LOG(msg)
+#endif
+        </div>
+        <img src="output1.png" alt="Output for Pre-processor Directives" class="output-image" />
+      </section>
+
+      <!-- Types of Tokens -->
+      <section class="topic-group">
+        <h3 class="topic-title">Types of Tokens</h3>
+        <p class="topic-def">
+          Tokens are the smallest elements in C language code such as keywords, identifiers, constants, operators, and symbols. They form the building blocks of programs.
+        </p>
+        <ul class="topic-list">
+          <li>Keywords</li>
+          <li>Identifiers</li>
+          <li>Constants</li>
+          <li>Strings</li>
+          <li>Special Symbols</li>
+          <li>Operators</li>
+        </ul>
+       
+
+      <!-- Input/Output Functions -->
+      <section class="topic-group">
+        <h3 class="topic-title">Input/Output Functions</h3>
+        <p class="topic-def">
+          C provides formatted and unformatted input/output functions to interact with users, such as printf, scanf, getchar, and puts.
+        </p>
+        <ul class="topic-list">
+          <li>Formatted I/O Functions (printf(), scanf())</li>
+          <li>Unformatted I/O Functions (putchar(), getchar(), puts(), gets())</li>
+        </ul>
+        <div class="example-code">
+#include &lt;stdio.h&gt;
+
+int main() {
+    char name[50];
+    int age;
+    
+    printf("Enter name: ");
+    gets(name);
+    
+    printf("Enter age: ");
+    scanf("%d", &amp;age);
+    
+    printf("Hello, %s!\n", name);
+    printf("You are %d years old.\n", age);
+    return 0;
+}
+        </div>
+        <img src="output3.png" alt="Output for Input/Output Functions" class="output-image" />
+      </section>
+
+      <!-- Control Statements -->
+      <section class="topic-group">
+        <h3 class="topic-title">Control Statements</h3>
+        <p class="topic-def">
+          Control statements guide program flow using condition checks or jumps, including switch-case and goto labels for decision making.
+        </p>
+        <ul class="topic-list">
+          <li>Switch case</li>
+          <li>Goto label</li>
+        </ul>
+        <div class="example-code">
+int main() {
+    int choice = 2;
+    
+    switch(choice) {
+        case 1:
+            printf("One");
+            break;
+        case 2:
+            printf("Two");
+            break;
+        default:
+            goto error;
+    }
+    return 0;
+
+error:
+    printf("Invalid choice");
+    return 1;
+}
+        </div>
+        <img src="output4.png" alt="Output for Control Statements" class="output-image" />
+      </section>
+
+      <!-- Arrays -->
+      <section class="topic-group">
+        <h3 class="topic-title">Arrays</h3>
+        <p class="topic-def">
+          Arrays store collections of elements of the same type in contiguous memory locations. They support operations like traversal and transposition.
+        </p>
+        <ul class="topic-list">
+          <li>One Dimensional Array</li>
+          <li>Two Dimensional Array</li>
+          <li>Array Operations (1D and 2D): +, -, *, /, transpose</li>
+        </ul>
+        <div class="example-code">
+int main() {
+    int arr1D[5] = {1, 2, 3, 4, 5};
+    int matrix[2][2] = {{1, 2}, {3, 4}};
+    int transpose[2][2];
+    
+    // Transpose
+    for(int i = 0; i &lt; 2; i++)
+        for(int j = 0; j &lt; 2; j++)
+            transpose[j][i] = matrix[i][j];
+}
+        </div>
+        <img src="output5.png" alt="Output for Arrays" class="output-image" />
+      </section>
+
+      <!-- Patterns -->
+      <section class="topic-group">
+        <h3 class="topic-title">Patterns</h3>
+        <p class="topic-def">
+          Patterns are sequences of characters printed in specific shapes using loops. Common patterns include pyramids, squares, and rectangles.
+        </p>
+        <ul class="topic-list">
+          <li>Square</li>
+          <li>Rectangle</li>
+          <li>Right Pyramid</li>
+          <li>Inverse Right Pyramid</li>
+        </ul>
+        <div class="example-code">
+void printPyramid(int n) {
+    for(int i = 0; i &lt; n; i++) {
+        for(int j = 0; j &lt;= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+}
+        </div>
+        <img src="output6.png" alt="Output for Patterns" class="output-image" />
+      </section>
+
+      <!-- String Functions -->
+      <section class="topic-group">
+        <h3 class="topic-title">String Functions</h3>
+        <p class="topic-def">
+          String functions manipulate character arrays by measuring length, copying, concatenating, and comparing strings efficiently.
+        </p>
+        <ul class="topic-list">
+          <li>strlen()</li>
+          <li>strlwr()</li>
+          <li>strupr()</li>
+          <li>strcpy()</li>
+          <li>strcmp()</li>
+          <li>strcat()</li>
+          <li>strncat()</li>
+        </ul>
+        <div class="example-code">
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char str1[] = "Hello, World!";
+    printf("Length of string \"%s\": %zu\n", str1, strlen(str1));
+
+    char str2[] = "HELLO";
+    for (int i = 0; str2[i]; i++) {
+        str2[i] = tolower(str2[i]);
+    }
+    printf("Lowercase string: %s\n", str2);
+
+    char str3[] = "world";
+    for (int i = 0; str3[i]; i++) {
+        str3[i] = toupper(str3[i]);
+    }
+    printf("Uppercase string: %s\n", str3);
+
+    char str4[50];
+    strcpy(str4, "Copy this string");
+    printf("Copied string: %s\n", str4);
+
+    char str5[] = "apple";
+    char str6[] = "banana";
+    int result = strcmp(str5, str6);
+    if (result &lt; 0) {
+        printf("\"%s\" is less than \"%s\"\n", str5, str6);
+    } else if (result == 0) {
+        printf("\"%s\" is equal to \"%s\"\n", str5, str6);
+    } else {
+        printf("\"%s\" is greater than \"%s\"\n", str5, str6);
+    }
+
+    char str7[50] = "Hello, ";
+    char str8[] = "world!";
+    strcat(str7, str8);
+    printf("Concatenated string: %s\n", str7);
+
+    char str9[50] = "Hello, ";
+    char str10[] = "world! It's a nice day.";
+    strncat(str9, str10, 5);
+    printf("Concatenated with limit: %s\n", str9);
+
+    return 0;
+}
+        </div>
+        <img src="output7.png" alt="Output for String Functions" class="output-image" />
+      </section>
+    </main>
+  </body>
+</html>
